@@ -17,3 +17,4 @@ venv/
 # Ignore IDE files
 .vscode/
 .idea/
+todoProject/__pycache__
