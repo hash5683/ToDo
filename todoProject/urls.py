@@ -17,15 +17,10 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from todo import views
-
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('authentification.urls')),
     path('' , include('registration.urls')),
-    path('submit/', views.submit, name='submit'),
-    path('create/', views.createpage, name='create'),
-    path('home/', views.homepage, name='home'),   
+    path('' , include('todo.urls')),   
 ]

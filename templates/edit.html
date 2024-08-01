@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Todo - Todo App{% endblock %}
+
+{% block content %}
+    <h1 class="text-center">Edit Todo</h1>
+    <hr>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" name="title" id="title" value="{{ todo.title }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" name="description" id="description" rows="3">{{ todo.description }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+    <a href="{% url 'home' %}" class="btn btn-secondary mt-3">Back to Todo List</a>
+{% endblock %}
+
