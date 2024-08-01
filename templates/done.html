@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Create Todo - Todo App{% endblock %}
+
+{% block content %}
+    <h1 class="text-center">Done Todos</h1>
+    <hr>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Task</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for todo in todos %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ todo.title }}</td>
+                <td>{{ todo.description }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="text-center">
+        <a href="{% url 'home' %}" class="btn btn-secondary">Back to Todo List</a>
+        <a href="{% url 'logout' %}" class="btn btn-secondary">Logout</a>
+    </div>
+{% endblock %}
